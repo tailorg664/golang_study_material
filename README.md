@@ -25,14 +25,10 @@ This project is a simple Go practice app for booking conference tickets from the
 - `len` gives the current size of a slice.
 - `fmt.Printf` supports formatted output with placeholders like `%s`, `%d`, `%v`, and `%T`.
 
-## Future Study
-
-- [ ] Input validation for ticket quantity and email.
-- [ ] Looping so multiple users can book tickets.
-- [ ] Better ticket availability checks before confirming a booking.
-- [ ] Functions to separate booking logic from printing logic.
-- [ ] Structs for storing booking details in a cleaner way.
-- [ ] Error handling and edge cases.
-- [ ] Concurrency basics in Go.
-- [ ] Working with files, packages, and tests.
-# golang_study_material
+# Looping in Go
+- For-each loop in Go looks like this : 
+```
+for _, fruit := range slice {
+	fmt.Println(fruit)
+}
+```
