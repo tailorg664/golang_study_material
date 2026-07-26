@@ -12,8 +12,11 @@ func main(){
 	
 	fmt.Println("Capacity of myMap:", len(myMap))
 	for key, value := range myMap {
-		time.Sleep(2 * time.Second) // Sleep for 2 seconds
-		fmt.Printf("Key: %s, Value: %d\n", key, value)
+
+		go func() {
+			time.Sleep(2 * time.Second) // Sleep for 2 seconds
+			fmt.Printf("Key: %s, Value: %d\n", key, value)
+		}()
 	}
 	var findKey string
 	fmt.Println("Enter a key to find its quantity:")
