@@ -12,7 +12,7 @@ func main(){
 	
 	fmt.Println("Capacity of myMap:", len(myMap))
 	for key, value := range myMap {
-
+		
 		go func() {
 			time.Sleep(2 * time.Second) // Sleep for 2 seconds
 			fmt.Printf("Key: %s, Value: %d\n", key, value)
