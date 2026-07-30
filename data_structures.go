@@ -14,7 +14,7 @@ func main(){
 	for key, value := range myMap {
 		
 		go func() {
-			time.Sleep(2 * time.Second) // Sleep for 2 seconds
+			time.Sleep(200 * time.Millisecond) // Sleep for 200 milliseconds
 			fmt.Printf("Key: %s, Value: %d\n", key, value)
 		}()
 	}
