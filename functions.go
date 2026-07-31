@@ -31,12 +31,33 @@ func log_generator(f func() int) []string {
 	}
 	return logs
 }
+
+// clauses are used to create anonymous functions and call them immediately. This is a great way to create a function which is only used once and not needed again.
+func anonymous_function() func(string) {
+	return func(msg string) {
+		fmt.Println(msg)
+	}
+}
+func int_seq() func() int {
+	i := 0
+	return func() int {
+		i++
+		return i
+	}
+}
 func main(){
 	// anonymous function declaration
 	func(msg string){
 		fmt.Println(msg)
 	}("Anonymous Hello")
 	say_hello()
+	print_anonymous := anonymous_function()
+	fmt.Printf("Location of anonymous function : %p\n", print_anonymous)
+	print_anonymous("Anonymous Hello")
+	// calling int_seq function
+	seq := int_seq()
+	fmt.Printf("Location of int_seq function : %p\n", seq)
+	fmt.Println(seq())
 	// calling log_generator function
 	var logs []string= log_generator(random_func)
 	// showing logs

@@ -32,3 +32,16 @@ for _, fruit := range slice {
 	fmt.Println(fruit)
 }
 ```
+
+## New Learnings and Additions (upto : 31/07/2026)
+
+- **functions.go:** Higher-order functions and function types: passing functions as arguments (`log_generator(random_func)`), returning functions (`anonymous_function`, `int_seq`), anonymous functions, closures that capture state, `fmt.Sprintf` for custom formatting, and use of `math/rand/v2` and `time.Sleep` for generating random values and simulating delays. See [functions.go](functions.go#L1-L200).
+- **data_structures.go:** Maps and lookups: `make(map[string]int)`, `len()` for map size, iterating maps with `range`, launching goroutines to print map entries, and the comma-ok idiom for safe map lookup. The program also reads user input to query a key. See [data_structures.go](data_structures.go#L1-L200).
+- **loop.go:** More `for` loop patterns: infinite loops with `break`, classic init/cond/post loops, condition-only loops (like `while`), `range` over slices, and `range` over strings (index + rune). See [loop.go](loop.go#L1-L200).
+- **http_go/main.go:** Example of a non-main package layout (`package httpgo`) with a simple `fmt.Printf` example demonstrating package naming and separate folder structure. See [http_go/main.go](http_go/main.go#L1-L50).
+- **main.go:** (Already listed above) basic ticketing app: reading user input with `fmt.Scan`, building and inspecting a `[]string` slice of bookings, updating remaining tickets, and formatted output with `fmt.Printf`. See [main.go](main.go#L1-L200).
+
+If you'd like, I can also:
+
+- Run the programs and capture sample outputs.
+- Add short examples/snippets to the README showing how to run each file.
