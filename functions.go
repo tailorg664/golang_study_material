@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand/v2"	
+	"time"
+)
 
 
 func say_hello(){
@@ -8,35 +12,37 @@ func say_hello(){
 }
 
 // Target : to create function which accepts a function and logs its response
-func any_random_func(input int)(int,string){
-	var message string
-	if input >= 10 { 
-		message = "Testing Ok"
-	} else {
-		message = "Failed, redo the execution."
+
+func random_func() int {
+	time.Sleep(40 * time.Millisecond)
+	return rand.IntN(100)
+}
+// create a function which will beautify logs
+
+func beautify_logs(logs int) string{
+	log := fmt.Sprintf("Log : %d",logs)  // great way to use custom string formatting
+	return log
+}
+
+func log_generator(f func() int) []string {
+	var logs []string
+	for i :=0 ; i<10 ; i++ {
+		logs = append(logs,beautify_logs(f()))
 	}
-
-	return input,message
+	return logs
 }
-// Log Checker function
-
-func log_generator(input_func func(input int))string{
-	_,message := input_func(input)
-	fmt.Println("Displayed Logs")
-	return message
-}
-
 func main(){
 	// anonymous function declaration
 	func(msg string){
 		fmt.Println(msg)
 	}("Anonymous Hello")
 	say_hello()
-	message := log_generator(any_random_func(18))
-	fmt.Println(message)
-
-
+	// calling log_generator function
+	var logs []string= log_generator(random_func)
+	// showing logs
+	fmt.Println(logs[0:5])
 }
 
 
 
+// create a function which logs the return values of functions and stores them in a slice.
