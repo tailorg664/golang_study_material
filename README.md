@@ -40,8 +40,3 @@ for _, fruit := range slice {
 - **loop.go:** More `for` loop patterns: infinite loops with `break`, classic init/cond/post loops, condition-only loops (like `while`), `range` over slices, and `range` over strings (index + rune). See [loop.go](loop.go#L1-L200).
 - **http_go/main.go:** Example of a non-main package layout (`package httpgo`) with a simple `fmt.Printf` example demonstrating package naming and separate folder structure. See [http_go/main.go](http_go/main.go#L1-L50).
 - **main.go:** (Already listed above) basic ticketing app: reading user input with `fmt.Scan`, building and inspecting a `[]string` slice of bookings, updating remaining tickets, and formatted output with `fmt.Printf`. See [main.go](main.go#L1-L200).
-
-If you'd like, I can also:
-
-- Run the programs and capture sample outputs.
-- Add short examples/snippets to the README showing how to run each file.
