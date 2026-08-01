@@ -45,6 +45,13 @@ func int_seq() func() int {
 		return i
 	}
 }
+// recursion function 
+func factorial(n int) int {
+	if n ==0 {
+		return 1
+	}
+	return n * factorial(n-1)
+}
 func main(){
 	// anonymous function declaration
 	func(msg string){
@@ -62,6 +69,7 @@ func main(){
 	var logs []string= log_generator(random_func)
 	// showing logs
 	fmt.Println(logs[0:5])
+	fmt.Println(factorial(5))
 }
 
 
