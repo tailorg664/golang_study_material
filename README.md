@@ -26,7 +26,9 @@ This project is a simple Go practice app for booking conference tickets from the
 - `fmt.Printf` supports formatted output with placeholders like `%s`, `%d`, `%v`, and `%T`.
 
 # Looping in Go
-- For-each loop in Go looks like this : 
+
+- For-each loop in Go looks like this :
+
 ```
 for _, fruit := range slice {
 	fmt.Println(fruit)
@@ -40,3 +42,12 @@ for _, fruit := range slice {
 - **loop.go:** More `for` loop patterns: infinite loops with `break`, classic init/cond/post loops, condition-only loops (like `while`), `range` over slices, and `range` over strings (index + rune). See [loop.go](loop.go#L1-L200).
 - **http_go/main.go:** Example of a non-main package layout (`package httpgo`) with a simple `fmt.Printf` example demonstrating package naming and separate folder structure. See [http_go/main.go](http_go/main.go#L1-L50).
 - **main.go:** (Already listed above) basic ticketing app: reading user input with `fmt.Scan`, building and inspecting a `[]string` slice of bookings, updating remaining tickets, and formatted output with `fmt.Printf`. See [main.go](main.go#L1-L200).
+
+## Additional Learning Completed (03/08/2026)
+
+- **structs.go:** Learned how to define and initialize structs, work with struct fields, and access values through pointers.
+- **pointer.go:** Practiced using pointers to read and modify values indirectly, including address-of and dereference operations.
+- **methods.go:** Explored methods on structs and interfaces, including polymorphism through different concrete types implementing the same behavior.
+- **errors.go:** Learned how to handle unexpected runtime issues using `defer`, `panic`, and `recover`.
+- **go_routines.go:** Studied concurrency with goroutines, `sync.WaitGroup`, `sync.Mutex`, and channels for coordinating parallel tasks.
+- **Overall progress:** The learning journey now covers the basics of Go syntax, functions, collections, loops, structs, pointers, methods, interfaces, error handling, and concurrency.
