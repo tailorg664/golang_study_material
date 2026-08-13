@@ -26,6 +26,7 @@ elif [ "$IN" == "a" ]; then
 	sleep 1s
 	go run main.go $REPO
 	sleep 2s
+	echo "you can work on your repo now"
 	# use the REPO link for large structured work
 	# git init
 	# git add .
