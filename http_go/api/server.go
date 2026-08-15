@@ -51,3 +51,25 @@ func (s *Server) GetShoppingItems() http.HandlerFunc{
 
 	}
 }
+func (s *Server) GetShoppingItemByID() http.HandlerFunc{
+	return func(w http.ResponseWriter, r *http.Request) {
+		vars := mux.Vars(r)
+		idStr := vars["id"]
+		id, err := uuid.Parse(idStr)
+		if err != nil {
+			http.Error(w, "Invalid ID", http.StatusBadRequest)
+			return
+		}
+		for _, item := range s.shoppingItems {
+			if item.ID == id {
+				w.Header().Set("Content-Type", "application/json")
+				if err := json.NewEncoder(w).Encode(item); err != nil{
+					http.Error(w, err.Error(), http.StatusInternalServerError)
+					return
+				}
+				return
+			}
+		}
+		http.Error(w, "Item not found", http.StatusNotFound)
+	}
+}
