@@ -1,13 +1,22 @@
 package main
 
-import "net/http"
+import (
+	"fmt"
+	"net/http"
+)
+
 
 
 func main(){
-	http.HandleFunc("/hello-world", func(w http.ResponseWriter,r *http.Request) {
-		w.Write([]byte("Hello World"))
-	})
-	http.ListenAndServe(":8080",nil)
+	mux := http.NewServeMux()
+	mux.HandleFunc("/",handleRoot)
+	mux.HandleFunc("POST /user",createUser)
+	fmt.Println("Server is running on port: 8000")
+	http.ListenAndServe(":8000",mux)
+}
+
+func handleRoot(w http.ResponseWriter, r *http.Request){
+	fmt.Fprintf(w, "Hello, World!")
 }
 
 //Handler Function Definition : 
