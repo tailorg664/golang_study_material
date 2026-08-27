@@ -5,8 +5,13 @@ import (
 	"net/http"
 )
 
+type user struct{
+	id int32
+	name string
+	date_joined string
+}
 
-
+var users []user
 func main(){
 	mux := http.NewServeMux()
 	mux.HandleFunc("/",handleRoot)
@@ -17,6 +22,14 @@ func main(){
 
 func handleRoot(w http.ResponseWriter, r *http.Request){
 	fmt.Fprintf(w, "Hello, World!")
+}
+
+func createUser(w http.ResponseWriter, r *http.Request){
+	var u user
+	fmt.Scan(&u.id, &u.name, &u.date_joined)
+	users = append(users, u)
+	w.WriteHeader(http.StatusCreated)
+	fmt.Fprintf(w, "User created successfully")
 }
 
 //Handler Function Definition : 
