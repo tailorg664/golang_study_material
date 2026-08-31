@@ -15,7 +15,17 @@ func check_link_validity(link string) int{
 		return 0
 	}
 	cmd := exec.Command("git", "ls-remote", "--exit-code", link)
-	_, err := cmd.CombinedOutput()
+	err := cmd.Run()
+	exitError,ok := err.(*exec.ExitError)
+	if !ok {
+		fmt.Printf("Error verifying link: %s\n", err)
+		fmt.Println("----------------------Error----------------------")
+		os.Exit(1)
+		return 0
+	}
+	if exitError.ExitCode() == 2 {
+		return 1
+	}
 	if err != nil {
 		fmt.Printf("Error verifying link: %s\n", err)
 		fmt.Println("----------------------Error----------------------")
