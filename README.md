@@ -51,3 +51,4 @@ for _, fruit := range slice {
 - **errors.go:** Learned how to handle unexpected runtime issues using `defer`, `panic`, and `recover`.
 - **go_routines.go:** Studied concurrency with goroutines, `sync.WaitGroup`, `sync.Mutex`, and channels for coordinating parallel tasks.
 - **Overall progress:** The learning journey now covers the basics of Go syntax, functions, collections, loops, structs, pointers, methods, interfaces, error handling, and concurrency.
+- go is great.
